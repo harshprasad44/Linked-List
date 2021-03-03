@@ -135,6 +135,7 @@ class SinglyLinkedList {
     }
     return this;
   }
+  // just to practise reverse() again !! It's important for your exams/interviews!!!
   reverse2() {
     var node = this.head;
     this.head = this.tail;
