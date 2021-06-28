@@ -80,6 +80,21 @@ void deletion(node* &head, int val){
     delete toDelete;
 }
 
+node* reverseLinkedList(node* &head){
+    node* prevPtr = NULL;
+    node* currPtr = head;
+    node* nextPtr;
+
+    while(currPtr != NULL){
+        nextPtr = currPtr->next;
+        currPtr->next = prevPtr;
+
+        prevPtr = currPtr;
+        currPtr = nextPtr;
+    }
+    return prevPtr;
+}
+
 int main(){
     node* head = NULL;
     insertAtTail(head, 1);
@@ -90,8 +105,9 @@ int main(){
     display(head);
     //cout << search(head, 3) << endl;
     //deletion(head, 3);
-    deleteAtHead(head);
-    display(head);
+    //deleteAtHead(head);
+    node* newHead = reverseLinkedList(head);
+    display(newHead);
 
     return 0;
 }
